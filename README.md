@@ -14,6 +14,7 @@ Create a local env file:
 - Fill in **client-safe** Supabase keys:
   - `VITE_SUPABASE_URL`
   - `VITE_SUPABASE_ANON_KEY`
+  - (Optional) `SITE_URL` for `/api/inviteApplicant`
 
 Start the dev server:
 
@@ -32,7 +33,15 @@ If you see:
 ## Supabase dev users (optional)
 
 If you want the same dummy accounts inside Supabase Auth:
-- Run `supabase/schema.sql`, `supabase/platform.sql`, `supabase/cms.sql`, `supabase/platform_cms_v2.sql`, `supabase/contact.sql`
+- Run the SQL files in order:
+  - `supabase/schema.sql`
+  - `supabase/platform.sql`
+  - `supabase/cms.sql`
+  - `supabase/platform_cms_v2.sql`
+  - `supabase/contact.sql`
+  - `supabase/learning_cms.sql`
+  - `supabase/admin_progress.sql`
+  - `supabase/storage.sql`
 - Create users + profiles:
   - **Script**: `node scripts/seed-dev-users.mjs` (requires `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`)
   - **SQL only**: `supabase/seed-dev-users.sql` (requires you to create auth users first)

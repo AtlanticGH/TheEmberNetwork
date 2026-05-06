@@ -278,7 +278,21 @@ create policy "modules_select_by_course"
 on public.modules
 for select
 to authenticated
-using (true);
+using (
+  exists (
+    select 1
+    from public.courses c
+    where c.id = modules.course_id
+      and c.published = true
+  )
+  or exists (
+    select 1
+    from public.profiles p
+    where p.user_id = auth.uid()
+      and p.role in ('admin', 'super_admin', 'staff')
+      and p.status = 'active'
+  )
+);
 
 -- Staff can manage modules (course builder)
 drop policy if exists "modules_manage_staff" on public.modules;

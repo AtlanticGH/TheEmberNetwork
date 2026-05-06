@@ -13,9 +13,10 @@
   3. `supabase/seed.sql` (optional, but recommended for v1 content)
 
 ### 3) Add env vars
-- Copy `.env.example` to `.env.local` (or `.env`) and fill values:
-  - `VITE_SUPABASE_URL`
-  - `VITE_SUPABASE_ANON_KEY`
+- Copy `.env.example` → `.env` and fill values:
+  - **Client (Vite)**: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`
+  - **Server (Vercel `/api/*`)**: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`
+  - **Optional**: `SITE_URL` (used for invite redirects)
 
 ### 4) Run locally
 ```bash
