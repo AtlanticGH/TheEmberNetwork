@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Ember Network | Small Sparks Ignite Big Dreams</title>
+    <meta name="description" content="The Ember Network is a community of ignition and empowerment for aspiring entrepreneurs and early-stage founders." />
+    <script src="assets/js/tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body data-page="index" class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 selection:bg-orange-300/60 selection:text-zinc-900">
+    <div id="scroll-progress" class="fixed left-0 top-0 z-[100] h-1 w-0 bg-gradient-to-r from-orange-500 via-amber-400 to-orange-600 transition-all duration-200"></div>
+    <div id="site-navbar"></div>
+
+    <main id="page-main" data-component="page-main" class="overflow-x-hidden">
+      <!-- Section: Hero Gateway -->
+      <section
+        id="home-gateway"
+        data-section="hero-gateway"
+        class="relative min-h-[100dvh]"
+        data-bg="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80"
+      >
+        <div
+          class="absolute inset-0 bg-cover bg-center transition-all duration-700"
+          id="home-gateway-bg"
+          style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80')"
+        ></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-zinc-950/90"></div>
+
+        <div class="relative mx-auto flex min-h-[100dvh] max-w-7xl flex-col justify-center px-8 md:px-12 pb-12 pt-28 lg:px-10">
+          <div>
+            <p class="mb-5 inline-block w-fit rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs tracking-[0.2em] text-zinc-100 backdrop-blur">A COMMUNITY OF IGNITION & EMPOWERMENT</p>
+            <h1 class="max-w-4xl text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
+              Small sparks ignite
+              <span class="bg-gradient-to-r from-orange-400 via-amber-300 to-orange-600 bg-clip-text text-transparent">big dreams at The Ember Network</span>
+            </h1>
+            <p id="home-gateway-copy" class="mt-5 max-w-2xl text-sm tracking-[0.03em] text-zinc-100/90 md:text-base">
+              We help aspiring entrepreneurs and early-stage founders transform bold ideas into lasting ventures through mentorship, structured learning, and meaningful connections.
+            </p>
+            <div class="mt-10 flex flex-wrap gap-4">
+                <a href="community.html#membership" class="page-link hover-lift rounded-full bg-orange-500 px-5 py-2 font-medium text-white shadow-glow transition hover:scale-[1.03] hover:bg-orange-400">Join Community</a>
+              <a href="about.html" class="page-link hover-lift rounded-full border border-white/60 px-5 py-2 font-medium text-white transition hover:bg-white hover:text-zinc-900">Explore Story</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="pointer-events-none absolute inset-x-0 -bottom-px">
+          <svg viewBox="0 0 100 20" preserveAspectRatio="none" class="h-20 w-full md:h-28">
+            <polygon points="0,20 100,0 100,20" class="fill-orange-500"></polygon>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Section: Hero Gateway Actions -->
+      <section id="gateway-actions" data-section="gateway-actions" class="-mt-16 bg-orange-500 pt-28 pb-20 md:-mt-20 md:pt-36 md:pb-28">
+        <div class="mx-auto max-w-7xl px-8 md:px-12 lg:px-10">
+          <div class="grid items-center gap-6 lg:grid-cols-[1fr_auto]">
+            <div>
+              <p class="text-xs uppercase tracking-[0.18em] text-orange-100/90">Ready to Build?</p>
+              <h3 class="mt-2 text-2xl font-semibold text-white md:text-3xl">Join The Ember Network today</h3>
+              <p class="mt-3 max-w-3xl text-sm text-orange-50/90 md:text-base">
+                Get mentorship, structured programs, and a supportive founder ecosystem designed to help your idea grow into a lasting venture.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <a href="community.html#membership" class="page-link rounded-full bg-white px-5 py-2 text-sm font-semibold text-orange-600 transition hover:bg-orange-50">
+                Join Community
+              </a>
+              <a href="programs.html" class="page-link rounded-full border border-white/80 px-5 py-2 text-sm font-semibold text-white transition hover:bg-white/10">
+                Explore Programs
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: About Preview Content -->
+      <section id="about-preview" data-section="about-preview" class="bg-gradient-to-b from-white to-zinc-50/80 py-16 dark:from-zinc-950 dark:to-zinc-900/70">
+        <div class="mx-auto max-w-7xl px-8 md:px-12 lg:px-10">
+          <div class="mb-12 max-w-3xl">
+            <p class="text-xs uppercase tracking-[0.18em] text-orange-500">About The Ember Network</p>
+            <h2 class="mt-3 text-3xl font-semibold leading-tight md:text-5xl">Built to turn early ideas into resilient ventures</h2>
+            <p class="mt-4 text-sm text-zinc-600 dark:text-zinc-300 md:text-base">
+              We combine mentorship, practical frameworks, and a founder-first community so ambitious builders can move from spark to sustainable growth.
+            </p>
+          </div>
+          <div class="grid gap-10">
+            <article class="group reveal overflow-hidden rounded-3xl border border-zinc-200/80 bg-white shadow-md shadow-zinc-200/40 ring-1 ring-zinc-100 dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-none dark:ring-zinc-800/70">
+              <div class="grid lg:grid-cols-[1.1fr_0.9fr]">
+                <div class="p-8 md:p-12">
+                  <p class="text-xs uppercase tracking-[0.18em] text-orange-500">Who We Are</p>
+                  <h3 class="mt-3 text-3xl font-semibold leading-tight md:text-4xl">A transformative hub for emerging entrepreneurs</h3>
+                  <p class="mt-5 text-zinc-600 dark:text-zinc-300">
+                  The Ember Network is dedicated to turning ambitious ideas into thriving enterprises.
+                  We provide mentorship, strategic guidance, and a supportive ecosystem where young
+                  visionaries gain the skills, knowledge, and connections they need to succeed.
+                  </p>
+                  <p class="mt-4 text-zinc-600 dark:text-zinc-300">
+                  More than a network, TEN is a movement where small sparks of potential ignite into
+                  powerful flames of achievement.
+                  </p>
+                </div>
+                <div class="relative min-h-[280px] overflow-hidden lg:min-h-full">
+                  <img
+                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+                    alt="Entrepreneurs collaborating in a workshop"
+                    class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="group reveal overflow-hidden rounded-3xl border border-zinc-200/80 bg-white shadow-md shadow-zinc-200/40 ring-1 ring-zinc-100 dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-none dark:ring-zinc-800/70">
+              <div class="grid lg:grid-cols-[0.9fr_1.1fr]">
+                <div class="relative min-h-[280px] overflow-hidden lg:order-1 lg:min-h-full">
+                  <img
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+                    alt="Team discussing business strategy"
+                    class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                </div>
+                <div class="p-8 md:p-12 lg:order-2">
+                  <p class="text-xs uppercase tracking-[0.18em] text-orange-500">Background</p>
+                  <h3 class="mt-3 text-3xl font-semibold leading-tight md:text-4xl">Bridging ambition and execution</h3>
+                  <p class="mt-5 text-zinc-600 dark:text-zinc-300">
+                  Entrepreneurship begins with a spark, but it takes the right environment to turn that
+                  spark into a lasting fire. TEN was founded to close the gap between ambition and
+                  execution through structured mentorship, hands-on learning, and a strong community.
+                  </p>
+                  <p class="mt-4 text-zinc-600 dark:text-zinc-300">
+                  We connect aspiring entrepreneurs with experienced mentors and industry leaders,
+                  creating a space where ideas are nurtured, resilience is built, and businesses take flight.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Journey + Trust -->
+      <section id="journey-trust" data-section="journey-trust" class="mx-auto max-w-7xl px-8 py-16 md:px-12 lg:px-10">
+        <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-[0.18em] text-orange-500">How It Works</p>
+            <h2 class="mt-2 text-3xl font-semibold md:text-4xl">Simple path from idea to momentum</h2>
+          </div>
+          <a href="join.html" class="page-link inline-flex rounded-full bg-orange-500 px-5 py-2 text-sm font-semibold text-white hover:bg-orange-400">Start Application</a>
+        </div>
+        <div class="grid gap-4 md:grid-cols-3">
+          <article class="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+            <p class="text-xs uppercase tracking-[0.16em] text-orange-500">01</p>
+            <h3 class="mt-2 text-xl font-semibold">Understand Your Stage</h3>
+            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Share your current stage and goals so we can align the right mentorship structure.</p>
+          </article>
+          <article class="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+            <p class="text-xs uppercase tracking-[0.16em] text-orange-500">02</p>
+            <h3 class="mt-2 text-xl font-semibold">Join Guided Programs</h3>
+            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Access practical tracks, weekly accountability, and mentor-led growth sessions.</p>
+          </article>
+          <article class="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+            <p class="text-xs uppercase tracking-[0.16em] text-orange-500">03</p>
+            <h3 class="mt-2 text-xl font-semibold">Build With Community</h3>
+            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Grow alongside founders, experts, and peers focused on meaningful impact.</p>
+          </article>
+        </div>
+        <div class="mt-8 grid gap-4 md:grid-cols-3">
+          <article class="rounded-xl border border-zinc-200 bg-zinc-50 p-5 text-center dark:border-zinc-800 dark:bg-zinc-900/70">
+            <p class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">1,200+</p>
+            <p class="mt-1 text-xs uppercase tracking-[0.12em] text-zinc-500">Mentorship Sessions</p>
+          </article>
+          <article class="rounded-xl border border-zinc-200 bg-zinc-50 p-5 text-center dark:border-zinc-800 dark:bg-zinc-900/70">
+            <p class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">320+</p>
+            <p class="mt-1 text-xs uppercase tracking-[0.12em] text-zinc-500">Founders Supported</p>
+          </article>
+          <article class="rounded-xl border border-zinc-200 bg-zinc-50 p-5 text-center dark:border-zinc-800 dark:bg-zinc-900/70">
+            <p class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">94%</p>
+            <p class="mt-1 text-xs uppercase tracking-[0.12em] text-zinc-500">Member Satisfaction</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section: Marquee / Highlights Ticker -->
+      <section id="highlights-ticker" data-section="highlights-ticker" class="overflow-hidden border-y border-zinc-200 bg-zinc-50 py-8 dark:border-zinc-800 dark:bg-zinc-900/50">
+        <div class="animate-marquee whitespace-nowrap text-sm font-medium text-zinc-500">
+          <span class="mx-6">Entrepreneur of the week: Maya - scaling eco logistics</span>
+          <span class="mx-6">Testimonial: I found my cofounder in two weeks</span>
+          <span class="mx-6">Spotlight: AI mentor circles now open worldwide</span>
+          <span class="mx-6">New challenge: Build a social-impact prototype in 30 days</span>
+          <span class="mx-6">Entrepreneur of the week: Maya - scaling eco logistics</span>
+          <span class="mx-6">Testimonial: I found my cofounder in two weeks</span>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <div id="site-chatbot"></div>
+    <script src="assets/js/script.js" defer></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

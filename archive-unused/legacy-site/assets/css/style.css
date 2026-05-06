@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root { color-scheme: light; }
+.dark { color-scheme: dark; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.story-bg { background-attachment: fixed; }
+
+/* Global typography: use the same primary family as section headers */
+html, body {
+  font-family: Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100%;
+  background-color: #ffffff;
+}
+
+html {
+  background-color: #ffffff;
+  overscroll-behavior-x: none;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700 !important;
+}
+
+/* Lighter paragraph/body copy for readability */
+p, li {
+  font-weight: 400;
+}
+
+body {
+  opacity: 1;
+  transition: opacity 0.45s ease;
+}
+
+body.page-ready {
+  opacity: 1;
+}
+
+body.page-leaving {
+  opacity: 0;
+}
+
+/* Premium dark + gold theme tokens */
+:root {
+  --ten-gold-500: #f97316;
+  --ten-gold-400: #fb923c;
+  --ten-gold-300: #fdba74;
+  --ten-surface-900: #0f1115;
+  --ten-surface-800: #171a21;
+}
+
+/* Reusable scalable style primitives for future pages/components */
+.premium-section {
+  background: linear-gradient(180deg, #0f1115 0%, #171a21 100%);
+  border: 1px solid rgb(63 63 70 / 0.6);
+  border-radius: 1rem;
+}
+
+.premium-card {
+  background: rgb(24 24 27 / 0.85);
+  border: 1px solid rgb(82 82 91 / 0.6);
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+.premium-pill {
+  border: 1px solid rgb(82 82 91 / 0.7);
+  background: rgb(24 24 27 / 0.7);
+  color: rgb(244 244 245);
+  border-radius: 9999px;
+}
+
+/* Global accent mapping: orange utilities -> premium gold */
+.bg-orange-500 { background-color: var(--ten-gold-500) !important; }
+.bg-orange-400 { background-color: var(--ten-gold-400) !important; }
+.text-orange-500 { color: var(--ten-gold-500) !important; }
+.text-orange-400 { color: var(--ten-gold-400) !important; }
+.text-orange-300 { color: var(--ten-gold-300) !important; }
+.border-orange-500 { border-color: var(--ten-gold-500) !important; }
+.border-orange-400 { border-color: var(--ten-gold-400) !important; }
+.hover\:bg-orange-400:hover { background-color: var(--ten-gold-400) !important; }
+.hover\:text-orange-500:hover { color: var(--ten-gold-500) !important; }
+.hover\:border-orange-400:hover { border-color: var(--ten-gold-400) !important; }
+.from-orange-500 { --tw-gradient-from: var(--ten-gold-500) var(--tw-gradient-from-position) !important; }
+.to-orange-600 { --tw-gradient-to: #ea580c var(--tw-gradient-to-position) !important; }
+.via-amber-400 { --tw-gradient-stops: var(--tw-gradient-from), var(--ten-gold-400) var(--tw-gradient-via-position), var(--tw-gradient-to) !important; }
+
+/* Smooth, modern motion defaults */
+a, button, input, textarea, select {
+  transition: all 220ms ease;
+}
+
+/* Global dark-mode fallbacks for light-only utility classes */
+.dark .bg-white {
+  background-color: rgb(24 24 27) !important;
+}
+
+.dark .bg-white\/90 {
+  background-color: rgb(24 24 27 / 0.9) !important;
+}
+
+.dark .bg-zinc-50 {
+  background-color: rgb(39 39 42) !important;
+}
+
+.dark .border-zinc-200 {
+  border-color: rgb(63 63 70) !important;
+}
+
+.dark .text-zinc-900 {
+  color: rgb(244 244 245) !important;
+}
+
+.dark .text-zinc-800 {
+  color: rgb(228 228 231) !important;
+}
+
+.dark .text-zinc-700 {
+  color: rgb(212 212 216) !important;
+}
+
+.dark .text-zinc-600 {
+  color: rgb(212 212 216) !important;
+}
+
+.dark .text-zinc-500 {
+  color: rgb(161 161 170) !important;
+}
+
+.dark body {
+  background-color: var(--ten-surface-900);
+}
+
+.dark html {
+  background-color: var(--ten-surface-900);
+}
+
+@media (max-width: 767px) {
+  #chat-widget {
+    right: 0.75rem;
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    z-index: 9999;
+    overflow: visible;
+  }
+
+  #chat-panel {
+    right: 0;
+    width: calc(100vw - 1.5rem) !important;
+    max-width: calc(100vw - 1.5rem) !important;
+    height: 76vh;
+    max-height: 76vh;
+    bottom: 4rem;
+  }
+
+  #chat-messages {
+    height: calc(76vh - 132px);
+    max-height: calc(76vh - 132px);
+  }
+}

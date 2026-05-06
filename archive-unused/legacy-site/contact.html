@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Ember Network | Contact</title>
+    <meta name="description" content="Contact The Ember Network for membership, partnerships, and support." />
+    <script src="assets/js/tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body data-page="contact" class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+    <div id="scroll-progress" class="fixed left-0 top-0 z-[100] h-1 w-0 bg-gradient-to-r from-orange-500 via-amber-400 to-orange-600 transition-all duration-200"></div>
+    <div id="site-navbar"></div>
+    <main id="page-main" data-component="page-main" class="overflow-x-hidden">
+      <!-- Section: Hero Gateway -->
+      <section id="home-gateway" data-section="hero-gateway" class="relative" data-bg="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80">
+        <div id="home-gateway-bg" class="absolute inset-0 bg-cover bg-center transition-all duration-700" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80')"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/70 via-zinc-950/60 to-zinc-950/75"></div>
+        <div class="relative mx-auto max-w-7xl px-8 md:px-12 pb-16 pt-32 lg:px-10">
+          <p class="inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-100 backdrop-blur">Contact</p>
+          <h1 class="mt-4 max-w-3xl text-4xl leading-tight text-white md:text-6xl">Reach out to collaborate</h1>
+          <p id="home-gateway-copy" class="mt-5 max-w-2xl text-sm text-zinc-100/90 md:text-base">Reach out for membership support, mentor collaboration, and strategic partnerships within TEN.</p>
+        </div>
+      </section>
+      <!-- Section: Gateway Labels -->
+      <section id="gateway-actions" data-section="gateway-actions" class="border-b border-zinc-200/80 pt-8 pb-6 dark:border-zinc-800/80 md:pb-7">
+        <div class="mx-auto max-w-7xl px-8 md:px-12 lg:px-10">
+          <div class="flex flex-wrap gap-2">
+            <a href="#contact-content" class="page-link inline-flex items-center rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-700 transition hover:border-orange-400 hover:text-orange-500 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200">Contact Info</a>
+            <a href="#contact-form" class="page-link inline-flex items-center rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-700 transition hover:border-orange-400 hover:text-orange-500 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200">Send Message</a>
+            <a href="#highlights-ticker" class="page-link inline-flex items-center rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-700 transition hover:border-orange-400 hover:text-orange-500 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200">Highlights</a>
+            <a href="#site-footer" class="page-link inline-flex items-center rounded-full border border-zinc-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-700 transition hover:border-orange-400 hover:text-orange-500 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200">Footer</a>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Contact Content -->
+      <section id="contact-content" data-section="contact-content" class="mx-auto max-w-7xl px-8 pt-12 pb-20 md:px-12 md:pt-14 lg:px-10">
+      <div class="grid gap-12 lg:grid-cols-2">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-orange-500">Contact</p>
+          <h1 class="mt-3 text-4xl font-semibold md:text-5xl">Reach out to collaborate</h1>
+          <p class="mt-4 text-zinc-600 dark:text-zinc-300">Reach out for membership support, mentor collaboration, and strategic partnerships within TEN.</p>
+          <div class="mt-8 space-y-2 text-sm text-zinc-600 dark:text-zinc-300"><p>Phone: +233 50 940 4673</p><p>Website: www.theembernetwork.com</p><p>Email: info@theembernetwork.com</p></div>
+        </div>
+        <form id="contact-form" data-component="contact-form" class="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <h2 class="text-xl font-semibold">Send a message</h2>
+          <div class="mt-4 space-y-3"><input type="text" required placeholder="Name" class="w-full rounded-xl border border-zinc-300 px-4 py-2 text-sm outline-none focus:border-orange-500 dark:border-zinc-700 dark:bg-zinc-950" /><input type="email" required placeholder="Email" class="w-full rounded-xl border border-zinc-300 px-4 py-2 text-sm outline-none focus:border-orange-500 dark:border-zinc-700 dark:bg-zinc-950" /><textarea rows="5" required placeholder="Your message" class="w-full rounded-xl border border-zinc-300 px-4 py-2 text-sm outline-none focus:border-orange-500 dark:border-zinc-700 dark:bg-zinc-950"></textarea><button class="w-full rounded-xl bg-orange-500 px-4 py-2 font-medium text-white">Send Message</button></div>
+        </form>
+      </div>
+      </section>
+      <section id="booking" data-section="booking" class="mx-auto max-w-7xl px-8 pb-20 md:px-12 lg:px-10">
+        <div class="grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <div>
+            <p class="text-xs uppercase tracking-[0.2em] text-orange-500">Session Booking</p>
+            <h2 class="mt-3 text-3xl font-semibold md:text-4xl">Book a mentorship consultation</h2>
+            <p class="mt-3 text-zinc-600 dark:text-zinc-300">Schedule a focused session with our team to discuss your stage, challenges, and the best entry point into TEN programs.</p>
+          </div>
+          <form id="booking-form" class="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+            <div class="space-y-3">
+              <input id="booking-name" name="name" type="text" required placeholder="Name" class="w-full rounded-xl border border-zinc-300 px-4 py-2 text-sm outline-none focus:border-orange-500 dark:border-zinc-700 dark:bg-zinc-950" />
+              <input id="booking-email" name="email" type="email" required placeholder="Email" class="w-full rounded-xl border border-zinc-300 px-4 py-2 text-sm outline-none focus:border-orange-500 dark:border-zinc-700 dark:bg-zinc-950" />
+              <textarea id="booking-details" rows="4" required placeholder="Preferred day/time and what you want support with" class="w-full rounded-xl border border-zinc-300 px-4 py-2 text-sm outline-none focus:border-orange-500 dark:border-zinc-700 dark:bg-zinc-950"></textarea>
+              <button type="submit" class="w-full rounded-xl bg-orange-500 px-4 py-2 font-medium text-white">Request Session</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <!-- Section: Marquee / Highlights Ticker -->
+      <section id="highlights-ticker" data-section="highlights-ticker" class="overflow-hidden border-y border-zinc-200 bg-zinc-50 py-8 dark:border-zinc-800 dark:bg-zinc-900/50">
+        <div class="animate-marquee whitespace-nowrap text-sm font-medium text-zinc-500">
+          <span class="mx-6">Entrepreneur of the week: Maya - scaling eco logistics</span>
+          <span class="mx-6">Testimonial: I found my cofounder in two weeks</span>
+          <span class="mx-6">Spotlight: AI mentor circles now open worldwide</span>
+          <span class="mx-6">New challenge: Build a social-impact prototype in 30 days</span>
+          <span class="mx-6">Entrepreneur of the week: Maya - scaling eco logistics</span>
+          <span class="mx-6">Testimonial: I found my cofounder in two weeks</span>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <div id="site-chatbot"></div>
+    <script src="assets/js/script.js" defer></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
