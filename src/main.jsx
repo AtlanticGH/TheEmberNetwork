@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
+import { QueryClientProvider } from '@tanstack/react-query'
 import './index.css'
 import App from './App.jsx'
 import { JoinCommunityPage } from './pages/JoinCommunityPage'
@@ -12,7 +13,7 @@ import { ProgramComponentsPage } from './pages/ProgramComponentsPage'
 import { ResourcesPage } from './pages/ResourcesPage'
 import { LegacyMemberCourseRedirect, LegacyMemberLessonRedirect } from './components/routing/LegacyMemberRedirects'
 import { AuthProvider } from './context/AuthContext'
-import { ProtectedRoute } from './components/auth/ProtectedRoute'
+import { ProtectedRoute } from './components/ProtectedRoute'
 import { SuperAdminRoute } from './components/auth/SuperAdminRoute'
 import { AdminGate } from './pages/admin/AdminGate'
 
@@ -40,13 +41,12 @@ import {
   PageFallback,
   ProfilePage,
 } from './router/lazyPages'
+import { queryClient } from './lib/queryClient'
 
-// Dev-only sanity check. Safe: runs only when Supabase is configured.
+// Dev-only sanity check: query profiles once on startup.
 if (import.meta.env.DEV) {
-  import('./lib/supabase')
-    .then(({ isSupabaseConfigured, testSupabaseConnection }) => {
-      if (isSupabaseConfigured) void testSupabaseConnection()
-    })
+  import('./lib/testSupabase')
+    .then(({ testSupabase }) => testSupabase())
     .catch(() => {})
 }
 
@@ -88,6 +88,28 @@ const router = createBrowserRouter([
       { path: 'program-components', element: <ProgramComponentsPage /> },
       { path: 'community', element: <JoinCommunityPage /> },
       { path: 'resources', element: <ResourcesPage /> },
+      {
+        path: 'auth',
+        lazy: async () => {
+          const m = await import('./pages/Auth')
+          return { Component: m.AuthPage }
+        },
+      },
+      {
+        path: 'dashboard',
+        lazy: async () => {
+          const m = await import('./pages/Dashboard')
+          return {
+            Component: () => (
+              <ProtectedRoute>
+                <PageFallback>
+                  <m.DashboardPage />
+                </PageFallback>
+              </ProtectedRoute>
+            ),
+          }
+        },
+      },
       { path: 'join', element: <Navigate to="/community" replace /> },
       { path: 'contact', element: <ContactPage /> },
       {
@@ -156,7 +178,7 @@ const router = createBrowserRouter([
           ...memberCourseRoutes,
         ],
       },
-      { path: 'dashboard', element: <Navigate to="/member" replace /> },
+      // /dashboard is now a real page (see above). Keep /member as the default authed area.
       { path: 'profile', element: <Navigate to="/member/profile" replace /> },
       { path: 'courses', element: <Navigate to="/member/courses" replace /> },
       { path: 'courses/:courseId', element: <LegacyMemberCourseRedirect /> },
@@ -211,8 +233,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </QueryClientProvider>
   </StrictMode>,
 )
