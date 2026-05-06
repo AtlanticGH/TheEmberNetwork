@@ -20,7 +20,7 @@ export function HeroSection({ onCtaClick }) {
         <p className="inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-100 backdrop-blur">
           Join The Ember Network
         </p>
-        <h1 className="mt-4 max-w-3xl text-4xl leading-tight text-white md:text-6xl">
+        <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-[1.08] text-white md:text-6xl">
           Start your mentorship journey in clear steps
         </h1>
         <p className="mt-5 max-w-2xl text-sm text-zinc-100/90 md:text-base">

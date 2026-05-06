@@ -60,7 +60,7 @@ export function HomePage() {
             <p className="mb-5 inline-block w-fit rounded-full border border-white/30 bg-white/[0.08] px-4 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-300/95 backdrop-blur-sm">
               {hero.badge}
             </p>
-            <h1 className="max-w-3xl text-3xl font-bold leading-[1.02] tracking-[-0.02em] text-white sm:text-4xl md:text-5xl lg:text-6xl lg:leading-[1.01]">
+            <h1 className="max-w-3xl text-3xl font-extrabold leading-[1.02] tracking-[-0.02em] text-white sm:text-4xl md:text-5xl lg:text-6xl lg:leading-[1.01]">
               <span className="block leading-[1.02]">{hero.headline_before}</span>
               <span className="mt-0.5 block leading-[1.02] bg-gradient-to-r from-orange-300 via-amber-200 to-orange-400 bg-clip-text text-transparent drop-shadow-[0_2px_14px_rgba(0,0,0,0.72)] md:mt-1">
                 {hero.headline_emphasis}
@@ -106,7 +106,7 @@ export function HomePage() {
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-orange-100/85">Ready to Build?</p>
               <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white md:text-3xl">Join The Ember Network today</h3>
-              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-orange-50/90 md:text-base md:leading-relaxed">
+              <p className="mt-4 max-w-3xl text-sm leading-normal text-orange-50/90 md:text-base md:leading-normal">
                 Get mentorship, structured programs, and a supportive founder ecosystem designed to help your idea grow into a lasting venture.
               </p>
             </div>
@@ -135,7 +135,7 @@ export function HomePage() {
             <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-5xl md:leading-[1.1]">
               Built to turn early ideas into resilient ventures
             </h2>
-            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-300 md:text-base md:leading-relaxed">
+            <p className="mt-5 max-w-2xl text-sm leading-normal text-zinc-600 dark:text-zinc-300 md:text-base md:leading-normal">
               We combine mentorship, practical frameworks, and a founder-first community so ambitious builders can move from spark to sustainable growth.
             </p>
           </Reveal>
@@ -148,10 +148,10 @@ export function HomePage() {
                   <h3 className="mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-4xl">
                     A transformative hub for emerging entrepreneurs
                   </h3>
-                  <p className="mt-6 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300 md:text-base md:leading-relaxed">
+                  <p className="mt-6 text-sm leading-normal text-zinc-600 dark:text-zinc-300 md:text-base md:leading-normal">
                     The Ember Network is dedicated to turning ambitious ideas into thriving enterprises. We provide mentorship, strategic guidance, and a supportive ecosystem where young visionaries gain the skills, knowledge, and connections they need to succeed.
                   </p>
-                  <p className="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300 md:text-base md:leading-relaxed">
+                  <p className="mt-4 text-sm leading-normal text-zinc-600 dark:text-zinc-300 md:text-base md:leading-normal">
                     More than a network, TEN is a movement where small sparks of potential ignite into powerful flames of achievement.
                   </p>
                 </div>
@@ -181,10 +181,10 @@ export function HomePage() {
                 <div className="p-8 md:p-12 lg:order-2 lg:p-14">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-orange-500">Background</p>
                   <h3 className="mt-4 text-3xl font-semibold leading-tight tracking-tight md:text-4xl">Bridging ambition and execution</h3>
-                  <p className="mt-6 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300 md:text-base md:leading-relaxed">
+                  <p className="mt-6 text-sm leading-normal text-zinc-600 dark:text-zinc-300 md:text-base md:leading-normal">
                     Entrepreneurship begins with a spark, but it takes the right environment to turn that spark into a lasting fire. TEN was founded to close the gap between ambition and execution through structured mentorship, hands-on learning, and a strong community.
                   </p>
-                  <p className="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300 md:text-base md:leading-relaxed">
+                  <p className="mt-4 text-sm leading-normal text-zinc-600 dark:text-zinc-300 md:text-base md:leading-normal">
                     We connect aspiring entrepreneurs with experienced mentors and industry leaders, creating a space where ideas are nurtured, resilience is built, and businesses take flight.
                   </p>
                 </div>
@@ -213,21 +213,21 @@ export function HomePage() {
           <Reveal as="article" className="rounded-2xl border border-zinc-200 bg-white p-7 dark:border-zinc-800 dark:bg-zinc-900">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-orange-500">01</p>
             <h3 className="mt-3 text-xl font-semibold tracking-tight">Understand Your Stage</h3>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+            <p className="mt-3 text-sm leading-normal text-zinc-600 dark:text-zinc-300">
               Share your current stage and goals so we can align the right mentorship structure.
             </p>
           </Reveal>
           <Reveal as="article" className="rounded-2xl border border-zinc-200 bg-white p-7 dark:border-zinc-800 dark:bg-zinc-900">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-orange-500">02</p>
             <h3 className="mt-3 text-xl font-semibold tracking-tight">Join Guided Programs</h3>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+            <p className="mt-3 text-sm leading-normal text-zinc-600 dark:text-zinc-300">
               Access practical tracks, weekly accountability, and mentor-led growth sessions.
             </p>
           </Reveal>
           <Reveal as="article" className="rounded-2xl border border-zinc-200 bg-white p-7 dark:border-zinc-800 dark:bg-zinc-900">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-orange-500">03</p>
             <h3 className="mt-3 text-xl font-semibold tracking-tight">Build With Community</h3>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+            <p className="mt-3 text-sm leading-normal text-zinc-600 dark:text-zinc-300">
               Grow alongside founders, experts, and peers focused on meaningful impact.
             </p>
           </Reveal>

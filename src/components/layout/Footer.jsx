@@ -9,7 +9,7 @@ export function Footer() {
             <h5 className="text-2xl font-semibold tracking-tight text-white">
               The <span className="text-orange-500">Ember Network</span>
             </h5>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-zinc-400/95">
+            <p className="mt-5 max-w-md text-sm leading-normal text-zinc-400/95">
               A community of ignition and empowerment helping aspiring entrepreneurs transform small sparks into lasting ventures through mentorship, structure, and opportunity.
             </p>
             <Link

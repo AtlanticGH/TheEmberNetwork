@@ -14,7 +14,7 @@ export function ProgramComponentsPage() {
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative mx-auto max-w-7xl px-8 py-24 pt-32 md:px-12 lg:px-10">
           <p className="text-xs uppercase tracking-[0.2em] text-orange-300">Program Components</p>
-          <h1 className="mt-3 max-w-3xl text-4xl font-semibold text-white md:text-6xl">Structured learning, step by step</h1>
+          <h1 className="mt-3 max-w-3xl text-4xl font-extrabold text-white md:text-6xl">Structured learning, step by step</h1>
           <p className="mt-4 max-w-2xl text-sm tracking-[0.03em] text-zinc-100/90 md:text-base">
             Explore each component of The Ember Network journey with clear outcomes, format, and progression.
           </p>
