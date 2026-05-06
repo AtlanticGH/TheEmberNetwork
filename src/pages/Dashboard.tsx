@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
-import { supabase } from '@/lib/supabase'
+import { supabase } from '@/lib/supabaseClient'
 import { getAvatarSignedUrl } from '@/lib/avatars'
 import { Sidebar } from '../components/dashboard/Sidebar'
 import { Header } from '../components/dashboard/Header'

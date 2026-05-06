@@ -1,7 +1,6 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 export async function listAdminCourses() {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('courses')
     .select('*')
@@ -11,7 +10,6 @@ export async function listAdminCourses() {
 }
 
 export async function createCourse(payload) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('courses')
     .insert(payload)
@@ -22,7 +20,6 @@ export async function createCourse(payload) {
 }
 
 export async function updateCourse(id, patch) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('courses')
     .update(patch)
@@ -34,7 +31,6 @@ export async function updateCourse(id, patch) {
 }
 
 export async function deleteCourse(id) {
-  const supabase = requireSupabase()
   const { error } = await supabase
     .from('courses')
     .delete()

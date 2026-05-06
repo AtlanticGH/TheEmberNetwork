@@ -1,9 +1,8 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 import { uploadStorageFile } from './fileUploads'
 import { getPublicAssetUrl } from './mediaAssets'
 
 export async function listResources({ limit = 200 } = {}) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('resources')
     .select('*')
@@ -17,7 +16,6 @@ export async function listResources({ limit = 200 } = {}) {
 }
 
 export async function createResource({ title, description, category, file, file_url } = {}) {
-  const supabase = requireSupabase()
   if (!title?.trim()) throw new Error('Title is required')
 
   let upload = null
@@ -44,8 +42,6 @@ export async function createResource({ title, description, category, file, file_
 }
 
 export async function deleteResource(resource) {
-  const supabase = requireSupabase()
-
   if (resource?.path) {
     await supabase.storage.from(resource.bucket || 'public').remove([resource.path]).catch(() => {})
   }

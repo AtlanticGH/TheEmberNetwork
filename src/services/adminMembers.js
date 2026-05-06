@@ -1,7 +1,6 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 export async function listMembers() {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('profiles')
     .select('user_id, full_name, email, role, status, mentor_user_id, joined_at')
@@ -11,7 +10,6 @@ export async function listMembers() {
 }
 
 export async function listMentors() {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('profiles')
     .select('user_id, full_name, email, role')
@@ -22,7 +20,6 @@ export async function listMentors() {
 }
 
 export async function updateMember(userId, patch) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('profiles')
     .update(patch)

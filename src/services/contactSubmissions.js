@@ -1,10 +1,6 @@
-import { isSupabaseConfigured, requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 export async function submitContact(payload) {
-  if (!isSupabaseConfigured) {
-    return { ok: false, error: 'Supabase is not configured.' }
-  }
-  const supabase = requireSupabase()
   const row = {
     name: payload.name,
     email: payload.email,

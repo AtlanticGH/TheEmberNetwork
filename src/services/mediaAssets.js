@@ -1,4 +1,4 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 const DEFAULT_BUCKET = 'public'
 
@@ -12,13 +12,11 @@ function sanitizeFilename(name) {
 }
 
 export function getPublicAssetUrl({ bucket = DEFAULT_BUCKET, path }) {
-  const supabase = requireSupabase()
   const { data } = supabase.storage.from(bucket).getPublicUrl(path)
   return data?.publicUrl || ''
 }
 
 export async function getDownloadUrl({ bucket = DEFAULT_BUCKET, path, expiresIn = 120 } = {}) {
-  const supabase = requireSupabase()
   if (!path) return ''
   if (bucket === 'public') return getPublicAssetUrl({ bucket, path })
   const { data, error } = await supabase.storage.from(bucket).createSignedUrl(path, expiresIn)
@@ -27,7 +25,6 @@ export async function getDownloadUrl({ bucket = DEFAULT_BUCKET, path, expiresIn 
 }
 
 export async function listMediaAssets({ limit = 100, query = '' } = {}) {
-  const supabase = requireSupabase()
   let q = supabase
     .from('media_assets')
     .select('*')
@@ -46,7 +43,6 @@ export async function listMediaAssets({ limit = 100, query = '' } = {}) {
 }
 
 export async function uploadMediaFile({ file, folder = 'uploads', title = '', alt = '', tags = [] } = {}) {
-  const supabase = requireSupabase()
   if (!file) throw new Error('Missing file')
 
   const ext = sanitizeFilename(file.name).split('.').pop()
@@ -79,7 +75,6 @@ export async function uploadMediaFile({ file, folder = 'uploads', title = '', al
 }
 
 export async function updateMediaAsset(id, patch) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('media_assets')
     .update(patch)
@@ -91,7 +86,6 @@ export async function updateMediaAsset(id, patch) {
 }
 
 export async function deleteMediaAsset(asset) {
-  const supabase = requireSupabase()
   const bucket = asset.bucket || DEFAULT_BUCKET
   const path = asset.path
   if (!path) throw new Error('Missing asset path')

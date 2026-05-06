@@ -1,7 +1,6 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 export async function listCmsContentRows({ includeDrafts = false } = {}) {
-  const supabase = requireSupabase()
   let q = supabase.from('cms_content').select('*').order('page_key').order('section_key')
   if (!includeDrafts) q = q.eq('published', true)
   const { data, error } = await q
@@ -10,7 +9,6 @@ export async function listCmsContentRows({ includeDrafts = false } = {}) {
 }
 
 export async function upsertCmsContentRow(row) {
-  const supabase = requireSupabase()
   const { data: u } = await supabase.auth.getUser()
   const payload = {
     page_key: row.page_key,

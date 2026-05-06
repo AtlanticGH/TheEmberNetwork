@@ -1,4 +1,4 @@
-import { isSupabaseConfigured, requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 const QUEUE_KEY = 'ember-application-queue'
 
@@ -25,15 +25,6 @@ export async function submitApplication(payload) {
     message: payload.message || null,
   }
 
-  if (!isSupabaseConfigured) {
-    const q = readQueue()
-    q.unshift({ row, ts: Date.now() })
-    writeQueue(q)
-    return { ok: true, queued: true, error: 'Supabase is not configured; application saved locally.' }
-  }
-
-  const supabase = requireSupabase()
-
   try {
     const { data, error } = await supabase
       .from('applications')
@@ -53,11 +44,6 @@ export async function submitApplication(payload) {
 }
 
 export async function flushQueuedApplications() {
-  if (!isSupabaseConfigured) {
-    return { ok: false, error: 'Supabase is not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your env.' }
-  }
-
-  const supabase = requireSupabase()
   const q = readQueue()
   if (!q.length) return { ok: true, flushed: 0 }
   if (typeof navigator !== 'undefined' && navigator.onLine === false) {

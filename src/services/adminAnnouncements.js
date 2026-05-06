@@ -1,7 +1,6 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 export async function listAnnouncements() {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('announcements')
     .select('*')
@@ -11,7 +10,6 @@ export async function listAnnouncements() {
 }
 
 export async function createAnnouncement(payload) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('announcements')
     .insert(payload)
@@ -22,7 +20,6 @@ export async function createAnnouncement(payload) {
 }
 
 export async function publishAnnouncement(id) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('announcements')
     .update({ published_at: new Date().toISOString() })

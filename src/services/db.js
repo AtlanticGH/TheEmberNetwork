@@ -1,7 +1,6 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 export async function getMyProfile() {
-  const supabase = requireSupabase()
   const { data: { user }, error: userErr } = await supabase.auth.getUser()
   if (userErr) throw userErr
   if (!user) return null
@@ -17,7 +16,6 @@ export async function getMyProfile() {
 }
 
 export async function updateMyProfile(patch) {
-  const supabase = requireSupabase()
   const { data: { user }, error: userErr } = await supabase.auth.getUser()
   if (userErr) throw userErr
   if (!user) throw new Error('Not authenticated')
@@ -34,7 +32,6 @@ export async function updateMyProfile(patch) {
 }
 
 export async function listCourses() {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('courses')
     .select('*')
@@ -45,7 +42,6 @@ export async function listCourses() {
 }
 
 export async function getCourse(courseId) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('courses')
     .select('*')
@@ -57,7 +53,6 @@ export async function getCourse(courseId) {
 }
 
 export async function listModules(courseId) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('modules')
     .select('*')
@@ -69,7 +64,6 @@ export async function listModules(courseId) {
 }
 
 export async function listLessons(moduleId) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('lessons')
     .select('*')
@@ -80,7 +74,6 @@ export async function listLessons(moduleId) {
 }
 
 export async function getLesson(lessonId) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('lessons')
     .select('*, modules!inner(course_id)')
@@ -91,7 +84,6 @@ export async function getLesson(lessonId) {
 }
 
 export async function listLessonFiles(lessonId) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('lesson_files')
     .select('*')
@@ -103,7 +95,6 @@ export async function listLessonFiles(lessonId) {
 }
 
 export async function listMyLessonCompletionsForCourse(courseId) {
-  const supabase = requireSupabase()
   const { data: { user }, error: userErr } = await supabase.auth.getUser()
   if (userErr) throw userErr
   if (!user) return []
@@ -139,7 +130,6 @@ export async function uncompleteLesson(lessonId) {
 }
 
 export async function listMyEnrollments() {
-  const supabase = requireSupabase()
   const { data: { user }, error: userErr } = await supabase.auth.getUser()
   if (userErr) throw userErr
   if (!user) return []
@@ -155,7 +145,6 @@ export async function listMyEnrollments() {
 }
 
 export async function enrollInCourse(courseId) {
-  const supabase = requireSupabase()
   const { data: { user }, error: userErr } = await supabase.auth.getUser()
   if (userErr) throw userErr
   if (!user) throw new Error('Not authenticated')
@@ -171,7 +160,6 @@ export async function enrollInCourse(courseId) {
 }
 
 export async function listMyCourseProgress() {
-  const supabase = requireSupabase()
   const { data: { user }, error: userErr } = await supabase.auth.getUser()
   if (userErr) throw userErr
   if (!user) return []
@@ -186,7 +174,6 @@ export async function listMyCourseProgress() {
 }
 
 export async function listMyModuleCompletionsForCourse(courseId) {
-  const supabase = requireSupabase()
   const { data: { user }, error: userErr } = await supabase.auth.getUser()
   if (userErr) throw userErr
   if (!user) return []
@@ -221,7 +208,6 @@ export async function uncompleteModule(moduleId) {
 }
 
 export async function listMyMilestones() {
-  const supabase = requireSupabase()
   const { data: { user }, error: userErr } = await supabase.auth.getUser()
   if (userErr) throw userErr
   if (!user) return []
@@ -237,7 +223,6 @@ export async function listMyMilestones() {
 }
 
 export async function listMyNotifications({ limit = 10 } = {}) {
-  const supabase = requireSupabase()
   const { data: { user }, error: userErr } = await supabase.auth.getUser()
   if (userErr) throw userErr
   if (!user) return []
@@ -254,7 +239,6 @@ export async function listMyNotifications({ limit = 10 } = {}) {
 }
 
 export async function markNotificationRead(notificationId) {
-  const supabase = requireSupabase()
   const { data: { user }, error: userErr } = await supabase.auth.getUser()
   if (userErr) throw userErr
   if (!user) throw new Error('Not authenticated')
@@ -272,7 +256,6 @@ export async function markNotificationRead(notificationId) {
 }
 
 export async function listMyUpcomingSessions({ limit = 5 } = {}) {
-  const supabase = requireSupabase()
   const { data: { user }, error: userErr } = await supabase.auth.getUser()
   if (userErr) throw userErr
   if (!user) return []

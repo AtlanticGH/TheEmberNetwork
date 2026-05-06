@@ -1,7 +1,6 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 export async function listActivityLogs({ limit = 100 } = {}) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('activity_logs')
     .select('id, actor_user_id, action, entity_type, entity_id, metadata_json, created_at')
@@ -12,7 +11,6 @@ export async function listActivityLogs({ limit = 100 } = {}) {
 }
 
 export async function logActivity({ action, entityType, entityId, metadata } = {}) {
-  const supabase = requireSupabase()
   const { data: u } = await supabase.auth.getUser()
   const uid = u?.user?.id
   const { error } = await supabase.from('activity_logs').insert({

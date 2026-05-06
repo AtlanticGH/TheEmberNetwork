@@ -1,2 +1,2 @@
-export * from './supabase.ts'
+export * from './supabaseClient.js'
 

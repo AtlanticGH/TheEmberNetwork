@@ -21,7 +21,7 @@ import { deleteLessonFile, listLessonFiles, uploadLessonFile } from '../../servi
 import { createAssignment, deleteAssignment, listAssignments } from '../../services/assignments'
 import { createQuizQuestion, deleteQuizQuestion, listQuizQuestions } from '../../services/quizzes'
 import { adminMarkComplete, adminMarkIncomplete } from '../../services/adminProgress'
-import { requireSupabase } from '../../services/supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 function IconButton({ children, ...props }) {
   return (
@@ -849,7 +849,6 @@ export function AdminCourseEditorPage() {
                   setBusy('progress:bulk')
                   setError('')
                   try {
-                    const supabase = requireSupabase()
                     const { data, error: uErr } = await supabase
                       .from('profiles')
                       .select('user_id')
@@ -887,7 +886,6 @@ export function AdminCourseEditorPage() {
                   setBusy('progress:bulk-incomplete')
                   setError('')
                   try {
-                    const supabase = requireSupabase()
                     const { data, error: uErr } = await supabase
                       .from('profiles')
                       .select('user_id')
@@ -924,7 +922,6 @@ export function AdminCourseEditorPage() {
                 setBusy('progress:complete')
                 setError('')
                 try {
-                  const supabase = requireSupabase()
                   const { data, error: uErr } = await supabase
                     .from('profiles')
                     .select('user_id')
@@ -951,7 +948,6 @@ export function AdminCourseEditorPage() {
                 setBusy('progress:incomplete')
                 setError('')
                 try {
-                  const supabase = requireSupabase()
                   const { data, error: uErr } = await supabase
                     .from('profiles')
                     .select('user_id')

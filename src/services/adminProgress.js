@@ -1,7 +1,6 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 async function getToken() {
-  const supabase = requireSupabase()
   const { data, error } = await supabase.auth.getSession()
   if (error) throw error
   const token = data?.session?.access_token

@@ -1,7 +1,6 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 export async function listSessions() {
-  const supabase = requireSupabase()
   const now = new Date().toISOString()
   const { data, error } = await supabase
     .from('sessions')
@@ -13,7 +12,6 @@ export async function listSessions() {
 }
 
 export async function createSession(payload) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('sessions')
     .insert(payload)

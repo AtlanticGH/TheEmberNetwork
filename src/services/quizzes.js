@@ -1,7 +1,6 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 export async function listQuizQuestions(lessonId) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('quizzes')
     .select('*')
@@ -24,7 +23,6 @@ export async function createQuizQuestion({ lessonId, question, options, correctA
   if (!ans) throw new Error('Correct answer is required')
   if (!opts.includes(ans)) throw new Error('Correct answer must match one of the options')
 
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('quizzes')
     .insert({
@@ -40,14 +38,12 @@ export async function createQuizQuestion({ lessonId, question, options, correctA
 }
 
 export async function deleteQuizQuestion(row) {
-  const supabase = requireSupabase()
   const { error } = await supabase.from('quizzes').delete().eq('id', row.id)
   if (error) throw error
 }
 
 export async function submitQuizAttempt({ lessonId, answersByQuestionId } = {}) {
   if (!lessonId) throw new Error('Missing lessonId')
-  const supabase = requireSupabase()
 
   const questions = await listQuizQuestions(lessonId)
   const total = questions.length
@@ -79,7 +75,6 @@ export async function submitQuizAttempt({ lessonId, answersByQuestionId } = {}) 
 
 export async function listMyQuizAttempts(lessonId, { limit = 10 } = {}) {
   if (!lessonId) return []
-  const supabase = requireSupabase()
   const { data: userRes, error: userErr } = await supabase.auth.getUser()
   if (userErr) throw userErr
   if (!userRes?.user) return []

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
-import { requireSupabase } from '../../services/supabaseClient'
 import { adminMarkComplete, adminMarkIncomplete } from '../../services/adminProgress'
+import { supabase } from '@/lib/supabaseClient'
 
 function Badge({ children, tone = 'zinc' }) {
   const tones = {
@@ -33,7 +33,6 @@ export function AdminMemberProgressPage() {
     setError('')
     setProfile(null)
     try {
-      const supabase = requireSupabase()
       const trimmed = email.trim()
       if (!trimmed) throw new Error('Enter a member email.')
 
@@ -137,7 +136,6 @@ export function AdminMemberProgressPage() {
         return
       }
       try {
-        const supabase = requireSupabase()
         const { data, error } = await supabase.from('profiles').select('user_id,email,full_name').in('user_id', actorIds.slice(0, 50))
         if (error) throw error
         const map = {}

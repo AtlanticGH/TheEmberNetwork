@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabase'
+import { supabase } from '@/lib/supabaseClient'
 import { uploadMyAvatar } from '@/lib/avatars'
 
 export async function updateProfile({

@@ -1,9 +1,8 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 import { uploadStorageFile } from './fileUploads'
 import { getDownloadUrl } from './mediaAssets'
 
 export async function listAssignments(lessonId) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('assignments')
     .select('*')
@@ -22,7 +21,6 @@ export async function listAssignments(lessonId) {
 export async function createAssignment({ lessonId, title, description, file } = {}) {
   if (!lessonId) throw new Error('Missing lessonId')
   if (!title?.trim()) throw new Error('Title is required')
-  const supabase = requireSupabase()
 
   let upload = null
   if (file) {
@@ -46,7 +44,6 @@ export async function createAssignment({ lessonId, title, description, file } = 
 }
 
 export async function deleteAssignment(row) {
-  const supabase = requireSupabase()
   if (row?.path) {
     await supabase.storage.from(row.bucket || 'public').remove([row.path]).catch(() => {})
   }

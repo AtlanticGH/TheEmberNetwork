@@ -1,4 +1,4 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 
 function sanitizeFilename(name) {
   return String(name || '')
@@ -51,7 +51,6 @@ export function validateUploadFile(file, { maxBytes = 25 * 1024 * 1024 } = {}) {
 
 export async function uploadStorageFile({ file, bucket = 'public', folder = 'uploads' } = {}) {
   validateUploadFile(file)
-  const supabase = requireSupabase()
 
   const ext = sanitizeFilename(file.name).split('.').pop()
   const base = sanitizeFilename(file.name).replace(/\.[^.]+$/, '')

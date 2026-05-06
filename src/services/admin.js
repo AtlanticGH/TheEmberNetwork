@@ -1,8 +1,7 @@
-import { requireSupabase } from './supabaseClient'
+import { supabase } from '@/lib/supabaseClient'
 import { logActivity } from './activityLogs'
 
 export async function listAdminSummary() {
-  const supabase = requireSupabase()
   const [{ count: applications_submitted, error: aErr }, { count: members, error: pErr }, { count: courses, error: cErr }] =
     await Promise.all([
       supabase.from('applications').select('id', { count: 'exact', head: true }).eq('status', 'submitted'),
@@ -16,7 +15,6 @@ export async function listAdminSummary() {
 }
 
 export async function listApplications() {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('applications')
     .select('*')
@@ -26,7 +24,6 @@ export async function listApplications() {
 }
 
 export async function updateApplicationStatus(id, status) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('applications')
     .update({ status })
@@ -48,7 +45,6 @@ export async function updateApplicationStatus(id, status) {
 }
 
 export async function updateApplication(id, patch) {
-  const supabase = requireSupabase()
   const { data, error } = await supabase
     .from('applications')
     .update(patch)
@@ -70,7 +66,6 @@ export async function updateApplication(id, patch) {
 }
 
 export async function inviteApprovedApplicant(applicationId, { role = 'student' } = {}) {
-  const supabase = requireSupabase()
   const { data: sessionRes, error: sessErr } = await supabase.auth.getSession()
   if (sessErr) throw sessErr
   const token = sessionRes?.session?.access_token
@@ -90,7 +85,6 @@ export async function inviteApprovedApplicant(applicationId, { role = 'student' 
 }
 
 export async function approveApplication(applicationId) {
-  const supabase = requireSupabase()
   const { data: sessionRes, error: sessErr } = await supabase.auth.getSession()
   if (sessErr) throw sessErr
   const token = sessionRes?.session?.access_token
@@ -110,7 +104,6 @@ export async function approveApplication(applicationId) {
 }
 
 export async function rejectApplication(applicationId, { rejectionReason = '' } = {}) {
-  const supabase = requireSupabase()
   const { data: sessionRes, error: sessErr } = await supabase.auth.getSession()
   if (sessErr) throw sessErr
   const token = sessionRes?.session?.access_token
