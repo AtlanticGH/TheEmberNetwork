@@ -41,6 +41,15 @@ import {
   ProfilePage,
 } from './router/lazyPages'
 
+// Dev-only sanity check. Safe: runs only when Supabase is configured.
+if (import.meta.env.DEV) {
+  import('./lib/supabase')
+    .then(({ isSupabaseConfigured, testSupabaseConnection }) => {
+      if (isSupabaseConfigured) void testSupabaseConnection()
+    })
+    .catch(() => {})
+}
+
 const memberCourseRoutes = [
   {
     path: 'courses',
